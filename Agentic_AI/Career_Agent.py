@@ -88,7 +88,7 @@ graph.add_edge("cover", END)
 app = graph.compile()
 
 #-------Run Example-------
-st.title("Career Advice AI Agent")
+st.title("Career AI Agent")
 question = st.text_input("Enter your question here:")
 
 input_msg = HumanMessage(content=question)
