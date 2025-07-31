@@ -35,19 +35,13 @@ tavily = TavilyClient(api_key=SEARCH_API_KEY)
 
 @tool
 def parse_resume(text: str) -> str:
-<<<<<<< HEAD
   """Extract relevant skills, roles, and professional experience from the provided text."""
   prompt = f"Extract structured info like skils, roles, years of experience from this text:\n\n{text}"
   return model.invoke([HumanMessage(content=prompt)]).content
-=======
-  """Extract skills, roles, years of experience from resume text"""
-  prompt = f"Extract structured info like skils, roles, years of experience from this resume:\n\n{text}"
-  return model.invoke([HumanMessage(content=prompt)])
->>>>>>> 14501d5bb959c04f2d8705d6389c6cdab03f7c8a
 
 @tool
 def search_jobs_tavily(query: str) -> str:
-  """Search for related jobs using Tavily and returns simplified results."""
+  """Search for relatedjobs using Tavily and returns summarized results."""
   results = tavily.search(query)
   #print(results)
   return results["results"]
